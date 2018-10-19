@@ -1,0 +1,54 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "io.qameta.allure:allure-gradle:2.5"
+        classpath "io.franzbecker:gradle-lombok:1.14"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'io.qameta.allure'
+apply plugin: 'io.franzbecker.gradle-lombok'
+
+repositories {
+    jcenter()
+}
+
+
+dependencies {
+    testCompile group: 'org.testng', name: 'testng', version: '6.14.3'
+    compile group: 'com.codeborne', name: 'selenide', version: '4.2.1'
+    //Properties
+    compile group: 'org.aeonbits.owner', name: 'owner', version: '1.0.10'
+    //Reporting
+    compile group: 'io.qameta.allure', name: 'allure-selenide', version: '2.7.0'
+    //Logging
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
+    compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
+}
+
+test {
+    useTestNG()
+
+    systemProperties System.getProperties()
+
+    maxParallelForks = 2
+
+    testLogging{
+        events "PASSED", "FAILED"
+        exceptionFormat = "full"
+    }
+}
+
+allure {
+    version = '2.7.0'
+    aspectjweaver = true
+    configuration = 'compile'
+    autoconfigure = true
+}
+
