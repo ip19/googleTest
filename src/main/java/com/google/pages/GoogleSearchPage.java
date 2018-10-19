@@ -70,7 +70,7 @@ public class GoogleSearchPage {
         for (int i = 0; i < buttonAmount; i++) {
             googleSwitchPages.get(i).click();
         }
-        assertEquals(expectedSize, domain);
+        assertEquals(domain, expectedSize,"Domain isn't found");
         return this;
     }
 }
