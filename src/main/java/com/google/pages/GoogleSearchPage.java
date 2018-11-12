@@ -33,15 +33,9 @@ public class GoogleSearchPage {
     }
 
     @Step
-    public GoogleSearchPage searchForSomething(String text) {
-        log.info("Searching for entered word");
+    public GoogleSearchPage searchFor(String text) {
+        log.info("Searching for entered word and click on search button");
         googleSearchField.append(text);
-        return this;
-    }
-
-    @Step
-    public GoogleSearchPage clickOnSearchButton() {
-        log.info("Clicking on search button");
         googleSearchButton.click();
         return this;
     }

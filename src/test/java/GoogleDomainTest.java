@@ -8,7 +8,6 @@ public class GoogleDomainTest extends BaseTest {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.open()
                 .searchForSomething("automation")
-                .clickOnSearchButton()
                 .verifyExpectedDomain("https://testautomationday.com", 5);
     }
 }

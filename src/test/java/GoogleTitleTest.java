@@ -8,7 +8,6 @@ public class GoogleTitleTest extends BaseTest {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.open()
                 .searchForSomething("automation")
-                .clickOnSearchButton()
                 .clickOnFirstDetectedLink()
                 .verifyTitleIsCorrect("Automation");
     }
