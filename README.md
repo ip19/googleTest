@@ -17,19 +17,23 @@ Reporting: Allure
 
 HOW TO RUN TESTS:
 
-There 3 ways:
-1. Clicking on run button in intellij idea (one by one).
+There are 3 ways:
 
-2. Using grade panel on the right side of Intellij idea (will execute tests in parallel):
+1. Clicking on run button in intellij idea (one by one running).
+
+2. Using gradle panel on the right side of Intellij idea (will execute tests in parallel):
+
 a) Click on Gradle panel;
+
 b) Click on build folder;
+
 c) Execute build task.
 
 3. Execute 'gradle build' command (will execute tests in parallel).
 
 HOW TO RUN TESTS + ALLURE REPORT:
 
-1. Using grade panel on the right side of Intellij idea (will execute tests in parallel):
+1. Using gradle panel on the right side of Intellij idea (will execute tests in parallel):
 
 a) Click on Gradle panel;
 
@@ -41,6 +45,6 @@ c) Execute build task.
 
 a) Click on other folder;
 
-b) Execute allureReport task (for report generating;
+b) Execute allureReport task (to generate report);
 
-c) Execute allureServe task (for report viewing);
+c) Execute allureServe task (to view report);
