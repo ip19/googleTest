@@ -3,7 +3,7 @@ import org.aeonbits.owner.Config;
 @Config.Sources("classpath:base.properties")
 public interface SelenideConfig extends Config {
 
-    //@DefaultValue("Chrome")
+    @DefaultValue("Chrome")
 
     @Key("browserName")
     String browserName();
