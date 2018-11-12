@@ -14,3 +14,27 @@ Parallelization: "maxParallelForks = 2" into build.gradle file;
 
 
 Reporting: Allure
+
+HOW TO RUN TESTS:
+
+There 3 ways:
+1. Clicking on run button in intellij idea (one by one).
+
+2. Using grade panel on the right side of Intellij idea (will execute tests in parallel):
+a) Click on Gradle panel;
+b) Click on build folder;
+c) Execute build task.
+
+3. Execute 'gradle build' command (will execute tests in parallel).
+
+HOW TO RUN TESTS + ALLURE REPORT:
+
+1. Using grade panel on the right side of Intellij idea (will execute tests in parallel):
+a) Click on Gradle panel;
+b) Click on build folder;
+c) Execute build task.
+
+2. Using same gradle panel:
+a) Click on other folder;
+b) Execute allureReport task (for report generating;
+c) Execute allureServe task (for report viewing);
