@@ -11,7 +11,6 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Configuration.baseUrl;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
-import static org.testng.Assert.assertEquals;
 
 @Slf4j
 public class GoogleSearchPage {
@@ -57,12 +56,15 @@ public class GoogleSearchPage {
     @Step
     public GoogleSearchPage verifyExpectedDomain(String domainName, Integer buttonAmount) {
         log.info("Domain verification");
-        Integer expectedSize = 1;
-        Integer domain = googleDetectedLinks.filter(text(domainName)).size();
-        for (int i = 0; i < buttonAmount; i++) {
+
+        for (int i = 1; i < buttonAmount; i++) {
+            Integer value = googleDetectedLinks.filterBy(text(domainName)).size();
             googleSwitchPages.get(i).click();
+            if (value == 1) {
+                log.info("Element is found on page - " + (i + 1));
+            }
         }
-        assertEquals(domain, expectedSize,"Domain isn't found");
+
         return this;
     }
 }

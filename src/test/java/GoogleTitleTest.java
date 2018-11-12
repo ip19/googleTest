@@ -7,7 +7,7 @@ public class GoogleTitleTest extends BaseTest {
     public void verifyTitleContainsExpectedWord() {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.open()
-                .searchForSomething("automation")
+                .searchFor("automation")
                 .clickOnFirstDetectedLink()
                 .verifyTitleIsCorrect("Automation");
     }

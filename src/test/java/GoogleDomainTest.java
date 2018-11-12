@@ -7,7 +7,7 @@ public class GoogleDomainTest extends BaseTest {
     public void verifyExpectedDomainIsPresent() {
         GoogleSearchPage googleSearchPage = new GoogleSearchPage();
         googleSearchPage.open()
-                .searchForSomething("automation")
-                .verifyExpectedDomain("https://testautomationday.com", 5);
+                .searchFor("automation")
+                .verifyExpectedDomain("https://www.rockwellautomation.com/", 4);
     }
 }
