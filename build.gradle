@@ -32,12 +32,16 @@ dependencies {
     compile group: 'ch.qos.logback', name: 'logback-core', version: '1.2.3'
 }
 
+
+
 test {
     useTestNG()
 
     systemProperties System.getProperties()
 
-    maxParallelForks = 2
+    tasks.withType(Test) {
+        maxParallelForks = 2
+    }
 
     testLogging{
         events "PASSED", "FAILED"
